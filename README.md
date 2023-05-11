@@ -1,6 +1,6 @@
 # MSW and Jest
 
-This is an example  React + Typescript project using Mock Service Worker (MSW) to improve Jest unit tests.
+This is an example  React + Typescript project comparing the use of Mock Service Worker (MSW) & Jest unit tests.
 
 Additional branches:
 
