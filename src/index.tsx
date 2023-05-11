@@ -4,6 +4,11 @@ import "./index.css";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 
+if (process.env.REACT_APP_MSW_MOCKING === "true") {
+  const { worker } = require("./mocks/browser");
+  worker.start();
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
