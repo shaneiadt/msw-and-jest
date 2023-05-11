@@ -20,6 +20,6 @@ Lauches the app with MSW runtime mocking enabled.
 
 ## Links
 
-- [Jest](https://jestjs.io/).
+- [Jest](https://jestjs.io/)
 
-- [MSW](https://mswjs.io/).
+- [MSW](https://mswjs.io/)
