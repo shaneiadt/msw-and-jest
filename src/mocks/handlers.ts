@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-const mockUsers = [
+const mockUsers: User[] = [
   {
     id: 0,
     name: "User Zero",
