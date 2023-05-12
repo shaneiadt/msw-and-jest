@@ -4,6 +4,15 @@ import { httpClient } from "../../api/http-client";
 
 import UserList from "./UserList";
 
+/** Fetch Mock */
+// const mockedFetch = jest.fn(() =>
+//   Promise.resolve({
+//     json: () => Promise. resolve({}),
+//   })
+// ) as jest.Mock;
+
+// global.fetch = mockedFetch;
+
 jest.mock("../../api/http-client");
 
 const fetchUsers = jest.mocked(httpClient.get);
