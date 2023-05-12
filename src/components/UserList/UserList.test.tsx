@@ -31,8 +31,8 @@ describe("UserList", () => {
 
     render(<UserList />);
 
-    const displayedTasks = await screen.findAllByTestId(/user-id-\d+/);
-    expect(displayedTasks).toHaveLength(2);
+    const userList = await screen.findAllByTestId(/user-id-\d+/);
+    expect(userList).toHaveLength(2);
     expect(screen.getByText("User Zero")).toBeInTheDocument();
     expect(screen.getByText("User One")).toBeInTheDocument();
   });
@@ -42,10 +42,10 @@ describe("UserList", () => {
 
     render(<UserList />);
 
-    const errorDisplay = await screen.findByText("Failed to fetch users");
-    expect(errorDisplay).toBeInTheDocument();
+    const error = await screen.findByText("Failed to fetch users");
+    expect(error).toBeInTheDocument();
 
-    const displayedTasks = screen.queryAllByTestId(/user-id-\d+/);
-    expect(displayedTasks).toEqual([]);
+    const userList = screen.queryAllByTestId(/user-id-\d+/);
+    expect(userList).toEqual([]);
   });
 });
