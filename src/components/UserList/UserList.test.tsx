@@ -6,9 +6,11 @@ import UserList from "./UserList";
 
 jest.mock("../../api/http-client");
 
+const fetchUsers = jest.mocked(httpClient.get);
+
 describe("UserList", () => {
   it("displays returned users on successful fetch", async () => {
-    await httpClient.get.mockResolvedValue({
+    fetchUsers.mockResolvedValue({
       data: [
         {
           id: 0,
@@ -36,7 +38,7 @@ describe("UserList", () => {
   });
 
   it("displays error message when fetching users raises error", async () => {
-    await httpClient.get.mockRejectedValue(new Error("broken"));
+    fetchUsers.mockRejectedValue(new Error("broken"));
 
     render(<UserList />);
 
