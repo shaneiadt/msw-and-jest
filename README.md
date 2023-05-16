@@ -6,6 +6,7 @@ Additional branches:
 
 - `jest-mock`
 - `msw-mock`
+- `advanced-msw-setup`
 
 ## Available Scripts
 
