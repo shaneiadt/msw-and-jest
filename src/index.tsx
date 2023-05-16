@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 
-if (process.env.REACT_APP_MSW_MOCKING === "true") {
-  const { worker } = require("./mocks/browser");
+if (process.env.REACT_APP_MSW_ENABLED === "true") {
+  const { worker } = require("./tools/msw/browser");
   worker.start();
 }
 

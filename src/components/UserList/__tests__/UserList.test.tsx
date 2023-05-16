@@ -1,11 +1,14 @@
 import { render, screen } from "@testing-library/react";
 
-import { mswServer } from "../../mocks/server";
-import { getUsersException } from "../../mocks/handlers";
+import { getUsersException } from "../../../mocks/handlers";
 
-import UserList from "./UserList";
+import UserList from "../UserList";
+import { initServer } from "../../../tools/msw/utils";
+import { setupUserListHandlers } from "../msw/handlers";
 
 describe("Component: UserList", () => {
+  const server = initServer(setupUserListHandlers());
+
   it("displays returned users on successful fetch", async () => {
     render(<UserList />);
 
@@ -16,7 +19,7 @@ describe("Component: UserList", () => {
   });
 
   it("displays error message when fetching tasks raises error", async () => {
-    mswServer.use(getUsersException);
+    server.use(getUsersException);
     render(<UserList />);
 
     const error = await screen.findByText("Failed to fetch users");
